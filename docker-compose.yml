@@ -3,8 +3,9 @@ services:
   rtsp-to-web:
     image: ghcr.io/deepch/rtsptoweb:latest 
     container_name: rtsp-to-web
-    ports:
-      - 8083:8083
+    network_mode: host
+    # ports:
+    #   - 8083:8083
     restart: unless-stopped
     environment:
       PUID: 1000
